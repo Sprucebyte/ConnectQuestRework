@@ -13,7 +13,6 @@ using static Util;
 
 public class Board : MonoBehaviour
 {
-
     public class Slot
     {
         public Slot(int x,  int y)
@@ -39,38 +38,32 @@ public class Board : MonoBehaviour
         {
             return obj;
         }
-
     }
 
     InputManager inputManager;
     public Inventory playerInventory;
 
     [HorizontalLine(2f, EColor.Red)]
-    [BoxGroup("Board size")]
-    [MinValue(0), MaxValue(40)]
-    [SerializeField] public Vector2Int boardSize = new Vector2Int(7, 6);
-    [BoxGroup("Board size")]
-    [MinValue(0), MaxValue(100)]
-    [SerializeField] Vector2Int slotSize = new Vector2Int(22, 21);
-    [BoxGroup("Board size")]
-    [SerializeField] Vector2Int slotCentreOffset = new Vector2Int(1, 0);
+
+    [BoxGroup("Board size"), MinValue(0), MaxValue(40), SerializeField]
+    public Vector2Int boardSize = new Vector2Int(7, 6);
+    [BoxGroup("Board size"), MinValue(0), MaxValue(100), SerializeField]
+    Vector2Int slotSize = new Vector2Int(22, 21);
+    [BoxGroup("Board size"), SerializeField]
+    Vector2Int slotCentreOffset = new Vector2Int(1, 0);
 
     [HorizontalLine(2f, EColor.Blue)]
-    [BoxGroup("Objects")]
-    [Required]
-    [SerializeField] GameObject tokenContainer;
-    [BoxGroup("Objects")]
-    [Required]
-    [SerializeField] GameObject testToken;
-    [BoxGroup("Objects")]
-    [Required]
-    [SerializeField] GameObject enemyToken;
-    [BoxGroup("Objects")]
-    [Required]
-    [SerializeField] Transform slotOrigin;
+
+    [BoxGroup("Objects"),Required, SerializeField]
+    GameObject tokenContainer;
+    [BoxGroup("Objects"), Required, SerializeField] 
+    GameObject testToken;
+    [BoxGroup("Objects"), Required, SerializeField] 
+    GameObject enemyToken;
+    [BoxGroup("Objects"), Required, SerializeField] 
+    Transform slotOrigin;
 
     [HorizontalLine(color: EColor.Gray)]
-
 
     private Team team1 = new Team();
     private Team team2 = new Team();
@@ -102,7 +95,7 @@ public class Board : MonoBehaviour
         slotCount = boardSize.x * boardSize.y;
         slots = new Slot[boardSize.x, boardSize.y];
 
-        // Replace with LINQ when you have spare time
+        // Replace for-loops with LINQ when you have spare time
         for (int x = 0; x < boardSize.x; x++)
         {
             for (int y = 0; y < boardSize.y; y++)
