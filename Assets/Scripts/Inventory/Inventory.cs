@@ -8,6 +8,10 @@ using UnityEngine;
 
 
 
+
+
+
+
 public class Inventory : MonoBehaviour
 {
     [Serializable]
@@ -44,11 +48,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    InventoryWindow inventoryWindow = null;
-
     public List<Slot<Token>> tokens;
     public List<Slot<Item>> items;
-
     public Token selectedToken;
     public Item selectedItem;
 

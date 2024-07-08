@@ -20,21 +20,15 @@ public class Token : MonoBehaviour
     public State state = State.OnBoard;
 
     [HorizontalLine(2f, EColor.Red)]
-    [BoxGroup("Info")]
-    [SerializeField] public string id = "Token ID";
-    [BoxGroup("Info")]
-    [SerializeField] private string displayName = "Name";
-    [BoxGroup("Info")]
-    [SerializeField] private string description = "Description";
+    
+    [SerializeField, BoxGroup("Info")] public string id = "Token ID";
+    [SerializeField, BoxGroup("Info")] private string displayName = "Name";
+    [SerializeField, BoxGroup("Info")] private string description = "Description";
     
     [HorizontalLine(2f, EColor.Blue)]
-    [BoxGroup("Sprite")]
-    [SerializeField] public Sprite sprite = null;
-    [BoxGroup("Sprite")]
-    [SerializeField] private new Animation animation = null;
-    [BoxGroup("Sprite")]
-    [SerializeField] private Animator animator = null;
-    [BoxGroup("Sprite")]
+    [SerializeField, BoxGroup("Sprite")] public Sprite sprite = null;
+    [SerializeField, BoxGroup("Sprite")] private new Animation animation = null;
+    [SerializeField, BoxGroup("Sprite")] private Animator animator = null;
     [SerializeField] private GameObject tokenRendererPrefab;
     private GameObject tokenRendererContainer;
     GameObject tokenRenderer;

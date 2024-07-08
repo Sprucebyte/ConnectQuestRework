@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField] GameObject mapContainer;
     [SerializeField] GameObject levelContainer;
     [SerializeField] GameObject characterContainer;
     [SerializeField] GameObject boardContainer;
+
+
+
 
     enum State
     {
@@ -21,6 +25,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] State state = State.Map;
 
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
@@ -46,5 +55,40 @@ public class GameManager : MonoBehaviour
 
             break;
         }
+
     }
+
+
+
+    /*
+    List<Team> teams = new List<Team>();
+    Team currentTeam;
+    int currentTeamValue; 
+
+
+    private void Start()
+    {
+        currentTeamValue = 0;
+        currentTeam = teams[currentTeamValue];
+    }
+    private void Update()
+    {
+
+    }
+
+    public void NextTeam()
+    {
+        if (currentTeamValue < teams.Count) {
+            currentTeamValue++;
+        }
+        else currentTeamValue = 0;
+        currentTeam = teams[currentTeamValue];
+    }
+
+    public void NextCharacter()
+    {
+        currentTeam.NextCharacter();
+    }
+    */
+
 }

@@ -66,6 +66,9 @@ public static class Util
             explosive = 0;
             poison    = 0;
             magic     = 0;
+            psychic   = 0;
+            electric  = 0;
+            misc      = 0;
         }
 
         public Damage(float defaultValue)
@@ -79,6 +82,9 @@ public static class Util
             explosive = defaultValue;
             poison    = defaultValue;
             magic     = defaultValue;
+            psychic   = defaultValue;
+            electric  = defaultValue;
+            misc      = defaultValue;
         }
 
         public float blunt;
@@ -90,11 +96,8 @@ public static class Util
         public float explosive;
         public float poison;
         public float magic;
+        public float psychic;
+        public float electric;
+        public float misc;
     }
-
-
-
-
 }
-
-

@@ -32,21 +32,18 @@ public class InventoryWindow : MonoBehaviour
             button.inventoryWindow = this;
             inventoryButtons.Add(button);
         }
-
     }
 
     private void Update()
     {
         for (int i = 0; i < 10; ++i)
         {
-            if (Input.GetKeyDown("" + i))
-            { 
-                if (i == 0) i = 9;
-                if (i-1 >= inventoryButtons.Count) return;
-                Debug.Log(i - 1);
-                SelectToken(i - 1);
-                inventory.selectedToken = inventoryButtons[i-1].item;
-            }
+            if (!Input.GetKeyDown("" + i)) continue;
+            if (i == 0) i = 9;
+            if (i-1 >= inventoryButtons.Count) return;
+            Debug.Log(i - 1);
+            SelectToken(i - 1);
+            inventory.selectedToken = inventoryButtons[i-1].item;
         }
     }
 
@@ -65,8 +62,4 @@ public class InventoryWindow : MonoBehaviour
             inventoryButton.SetHovered(false);
         }
     }
-
-
-
-
 }
