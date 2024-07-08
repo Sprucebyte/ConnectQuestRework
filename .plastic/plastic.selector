@@ -1,4 +1,0 @@
-repository "Connect Quest Rework@SpruceByte@cloud"
-  path "/"
-    smartbranch "/main"     
-     
